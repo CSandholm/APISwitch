@@ -76,7 +76,9 @@ class ExternalApiHandler:
                 url = "https://" + self.BASE_URL + api.get("PORT") + api.get("ENDPOINT")
                 async with session.post(
                         url,
-                        json={"input": request_data.input},
+                        json={"input": request_data.input,
+                              "src_lang": request_data.src_lang,
+                              "tgt_lang": request_data.tgt_lang},
                         headers=self.HEADERS
                 ) as response:
                     response.raise_for_status()

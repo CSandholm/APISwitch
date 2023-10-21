@@ -8,7 +8,7 @@
     "EN_SENTIMENT":{ "PORT":":8002",
       "ENDPOINT": "/EN_SENTIMENT"
     },
-    "TOPIC":{ "PORT":":8003",
+    "TOPIC":{ "PORT":":8000",
       "ENDPOINT": "/TOPIC"
     },
     "TRANSLATION":{ "PORT":":8004",

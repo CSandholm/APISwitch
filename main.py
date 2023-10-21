@@ -10,7 +10,7 @@ ExternalApiHandler = ExternalApiHandler()
 
 @app.get("/home")
 async def get_home():
-    return "HI"
+    return "API Switch"
 
 @app.post("/swe_sentiment/", response_model=SvSentimentResponse)
 async def get_sv_sentiment(request_data: Request):
@@ -41,10 +41,10 @@ def main():
     with open("Config/app_config.json") as f:
         config = json.load(f)
 
-    HOST = config.get("HOST")
-    PORT = config.get("PORT")
+    host = config.get("HOST")
+    port = config.get("PORT")
 
-    uvicorn.run(app, host=HOST, port=PORT)
+    uvicorn.run(app, host=host, port=port)
 
 
 if __name__ == "__main__":
