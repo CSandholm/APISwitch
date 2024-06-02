@@ -8,7 +8,7 @@ import json
 
 class ExternalApiHandler:
     def __init__(self):
-        with open("Config/external_api_config.json") as f:
+        with open("app/Config/external_api_config.json") as f:
             config = json.load(f)
         self.BASE_URL = config.get("BASE_URL")
         self.HEADERS = config.get("HEADERS")

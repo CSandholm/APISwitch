@@ -8,6 +8,8 @@ from requests_and_responses import *
 app = FastAPI()
 ExternalApiHandler = ExternalApiHandler()
 
+#Some comment
+
 @app.get("/home")
 async def get_home():
     return "API Switch"
@@ -36,16 +38,16 @@ async def get_translation(request_data: TranslationRequest):
 async def get_summarization(request_data: Request):
     result = await ExternalApiHandler.get_summarization(request_data)
     return result
+#
+#def main():
+#    with open("app/Config/app_config.json") as f:
+#        config = json.load(f)
+#
+#    host = config.get("HOST")
+#    port = config.get("PORT")
+#
+#    uvicorn.run(app, host=host, port=port)
+#
 
-def main():
-    with open("Config/app_config.json") as f:
-        config = json.load(f)
-
-    host = config.get("HOST")
-    port = config.get("PORT")
-
-    uvicorn.run(app, host=host, port=port)
-
-
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
